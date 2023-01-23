@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "next": "^13.1.1",
-    "react-dom": "^18.2.0",
     "ui": "*"
   },
   "devDependencies": {
