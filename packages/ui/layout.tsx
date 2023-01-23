@@ -1,35 +1,16 @@
 import React from "react";
-import {
-  AppstoreOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
-  TeamOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Layout, Menu, theme } from "antd";
+import { Layout, Menu, theme, Image } from "antd";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items: MenuProps["items"] = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  AppstoreOutlined,
-  TeamOutlined,
-  ShopOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: React.createElement(icon),
-  label: `nav ${index + 1}`,
-}));
+interface ILayoutProps {
+  menuItems: MenuProps["items"];
+  logo?: string; //path to logo
+  children: React.ReactNode;
+}
 
-const AmyLayout: React.FC = () => {
+const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children }) => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -47,41 +28,24 @@ const AmyLayout: React.FC = () => {
           bottom: 0,
         }}
       >
-        <div
-          style={{
-            height: 32,
-            margin: 16,
-            background: "rgba(255, 255, 255, 0.2)",
-          }}
+        <Image
+          src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png"
+          width={100}
+          height={100}
+          preview={false}
+          alt="Organization logo"
         />
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["4"]}
-          items={items}
+          defaultSelectedKeys={["1"]}
+          items={menuItems}
         />
       </Sider>
       <Layout className="site-layout" style={{ marginLeft: 200 }}>
         <Header style={{ padding: 0, background: colorBgContainer }} />
         <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
-          <div
-            style={{
-              padding: 24,
-              textAlign: "center",
-              background: colorBgContainer,
-            }}
-          >
-            <p>long content</p>
-            {
-              // indicates very long content
-              Array.from({ length: 100 }, (_, index) => (
-                <React.Fragment key={index}>
-                  {index % 20 === 0 && index ? "more" : "..."}
-                  <br />
-                </React.Fragment>
-              ))
-            }
-          </div>
+          {children}
         </Content>
         <Footer style={{ textAlign: "center" }}>
           Ant Design ©2023 Created by Ant UED
