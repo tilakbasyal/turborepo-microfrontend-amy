@@ -1,6 +1,8 @@
 import React from "react";
 import type { MenuProps } from "antd";
 import { Layout, Menu, theme, Image } from "antd";
+import { MenuClickEventHandler } from "rc-menu/lib/interface";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -10,10 +12,24 @@ interface ILayoutProps {
   children: React.ReactNode;
 }
 
+const handleMenuItemClick: (
+  navigate: NavigateFunction
+) => MenuClickEventHandler =
+  (navigate) =>
+  ({ key }) => {
+    navigate(key);
+  };
+
 const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children }) => {
+  const navigate = useNavigate();
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  const onClick = handleMenuItemClick(navigate);
+
+  console.count("why two times rendering???");
 
   return (
     <Layout hasSider>
@@ -40,10 +56,13 @@ const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children }) => {
           mode="inline"
           defaultSelectedKeys={["1"]}
           items={menuItems}
+          onClick={onClick}
         />
       </Sider>
       <Layout className="site-layout" style={{ marginLeft: 200 }}>
-        <Header style={{ padding: 0, background: colorBgContainer }} />
+        <Header style={{ padding: 0, background: colorBgContainer }}>
+          Header
+        </Header>
         <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
           {children}
         </Content>
