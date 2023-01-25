@@ -5,10 +5,12 @@ import {
   VideoCameraOutlined,
   HomeOutlined,
   ContactsOutlined,
+  DashboardOutlined,
 } from "@ant-design/icons";
 import { MenuProps } from "antd";
 
 enum navMenuItems {
+  WELCOME = "",
   HOME = "home",
   SERVICES = "services",
   ABOUT = "about",
@@ -17,6 +19,11 @@ enum navMenuItems {
 }
 
 export const menuItems: MenuProps["items"] = [
+  {
+    key: navMenuItems.WELCOME,
+    icon: React.createElement(DashboardOutlined),
+    label: "Welcome",
+  },
   {
     key: navMenuItems.HOME,
     icon: React.createElement(HomeOutlined),

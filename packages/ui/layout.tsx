@@ -54,7 +54,7 @@ const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children }) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={[""]}
           items={menuItems}
           onClick={onClick}
         />
