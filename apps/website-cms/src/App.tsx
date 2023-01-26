@@ -5,10 +5,11 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 
 import { menuItems } from "./constants";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <AmyLayout menuItems={menuItems}>
+    <AmyLayout menuItems={menuItems} header={<Header />}>
       <Outlet />
     </AmyLayout>
   );

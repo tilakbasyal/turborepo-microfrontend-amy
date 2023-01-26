@@ -10,6 +10,7 @@ interface ILayoutProps {
   menuItems: MenuProps["items"];
   logo?: string; //path to logo
   children: React.ReactNode;
+  header: React.ReactNode;
 }
 
 const handleMenuItemClick: (
@@ -20,7 +21,7 @@ const handleMenuItemClick: (
     navigate(key);
   };
 
-const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children }) => {
+const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children, header }) => {
   const navigate = useNavigate();
 
   const {
@@ -42,6 +43,7 @@ const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children }) => {
           left: 0,
           top: 0,
           bottom: 0,
+          textAlign: "center",
         }}
       >
         <Image
@@ -61,7 +63,7 @@ const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children }) => {
       </Sider>
       <Layout className="site-layout" style={{ marginLeft: 200 }}>
         <Header style={{ padding: 0, background: colorBgContainer }}>
-          Header
+          {header}
         </Header>
         <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
           {children}

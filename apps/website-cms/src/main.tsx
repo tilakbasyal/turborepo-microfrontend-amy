@@ -3,6 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 // import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  WelcomePage,
+  HomePage,
+  ServicesPage,
+  AboutPage,
+  GalleryPage,
+  ContactPage,
+} from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -11,27 +19,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <p>welcome</p>,
+        element: <WelcomePage />,
       },
       {
         path: "/home",
-        element: <p>home</p>,
+        element: <HomePage />,
       },
       {
         path: "/services",
-        element: <p>services</p>,
+        element: <ServicesPage />,
       },
       {
         path: "/about",
-        element: <p>about</p>,
+        element: <AboutPage />,
       },
       {
         path: "/gallery",
-        element: <p>gallery</p>,
+        element: <GalleryPage />,
       },
       {
         path: "/contact",
-        element: <p>contact</p>,
+        element: <ContactPage />,
       },
     ],
   },
