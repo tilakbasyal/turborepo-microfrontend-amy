@@ -1,5 +1,5 @@
 import React from "react";
-import type { MenuProps } from "antd";
+import { ConfigProvider, MenuProps } from "antd";
 import { Layout, Menu, theme, Image } from "antd";
 import { MenuClickEventHandler } from "rc-menu/lib/interface";
 import { NavigateFunction, useNavigate } from "react-router-dom";
@@ -33,46 +33,54 @@ const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children, header }) => {
   console.count("why two times rendering???");
 
   return (
-    <Layout hasSider>
-      <Sider
-        collapsible
-        style={{
-          overflow: "auto",
-          height: "100vh",
-          position: "fixed",
-          left: 0,
-          top: 0,
-          bottom: 0,
-          textAlign: "center",
-        }}
-      >
-        <Image
-          src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png"
-          width={100}
-          height={100}
-          preview={false}
-          alt="Organization logo"
-        />
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={[""]}
-          items={menuItems}
-          onClick={onClick}
-        />
-      </Sider>
-      <Layout className="site-layout" style={{ marginLeft: 200 }}>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
-          {header}
-        </Header>
-        <Content style={{ margin: "24px 24px 0", overflow: "initial" }}>
-          {children}
-        </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2023 Created by Ant UED
-        </Footer>
+    <ConfigProvider
+      theme={{
+        token: {
+          fontFamily: "Open Sans, sans-serif",
+        },
+      }}
+    >
+      <Layout hasSider>
+        <Sider
+          collapsible
+          style={{
+            overflow: "auto",
+            height: "100vh",
+            position: "relative",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            textAlign: "center",
+          }}
+        >
+          <Image
+            src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png"
+            width={100}
+            height={100}
+            preview={false}
+            alt="Organization logo"
+          />
+          <Menu
+            theme="dark"
+            mode="inline"
+            defaultSelectedKeys={[""]}
+            items={menuItems}
+            onClick={onClick}
+          />
+        </Sider>
+        <Layout className="site-layout">
+          <Header style={{ padding: 0, background: colorBgContainer }}>
+            {header}
+          </Header>
+          <Content style={{ margin: "24px 24px 0", overflow: "initial" }}>
+            {children}
+          </Content>
+          <Footer style={{ textAlign: "center" }}>
+            Ant Design ©2023 Created by Ant UED
+          </Footer>
+        </Layout>
       </Layout>
-    </Layout>
+    </ConfigProvider>
   );
 };
 
