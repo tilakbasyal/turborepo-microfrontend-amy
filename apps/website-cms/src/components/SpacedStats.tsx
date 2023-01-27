@@ -10,11 +10,27 @@ const TitleAndNumber: React.FC<TStatsProps> = ({ deviceType, percentage }) => {
   return (
     <Row>
       <Col span={24}>
-        <Typography.Text>{deviceType}</Typography.Text>
+        <Typography.Text
+          style={{
+            fontWeight: 600,
+            fontSize: 12,
+            color: "rgba(108, 64, 64, 0.88)",
+          }}
+        >
+          {deviceType}
+        </Typography.Text>
       </Col>
 
       <Col span={24}>
-        <Typography.Text>{percentage}%</Typography.Text>
+        <Typography.Text
+          style={{
+            fontWeight: 600,
+            fontSize: 18,
+            color: "rgba(108, 64, 64, 0.88)",
+          }}
+        >
+          {percentage}%
+        </Typography.Text>
       </Col>
     </Row>
   );
@@ -23,7 +39,7 @@ const TitleAndNumber: React.FC<TStatsProps> = ({ deviceType, percentage }) => {
 const SpacedStats = () => {
   return (
     <Space align="center" size="large">
-      <TitleAndNumber deviceType="Mobile" percentage={80} />
+      <TitleAndNumber deviceType="Mobile" percentage={72} />
       <Divider
         type="vertical"
         style={{
@@ -33,7 +49,7 @@ const SpacedStats = () => {
           backgroundColor: "#5f569b",
         }}
       />
-      <TitleAndNumber deviceType="Mobile" percentage={80} />
+      <TitleAndNumber deviceType="Desktop" percentage={11} />
       <Divider
         type="vertical"
         style={{
@@ -44,7 +60,7 @@ const SpacedStats = () => {
         }}
       />
 
-      <TitleAndNumber deviceType="Mobile" percentage={80} />
+      <TitleAndNumber deviceType="Others" percentage={17} />
     </Space>
   );
 };

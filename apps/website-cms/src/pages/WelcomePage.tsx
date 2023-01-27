@@ -2,31 +2,35 @@ import React from "react";
 import { Row, Col, Card, Statistic } from "antd";
 import Line from "../components/TinyLine";
 import SpacedStats from "../components/SpacedStats";
+import ColumnChart from "../components/ColumnChart";
+import BasicSelect from "../components/BasicSelect";
 
 const WelcomePage = () => {
   return (
     <Row gutter={24}>
       <Col span={24}>
         <Card title="Welcome to Some Company CMS dashboard">
-          <Row>
-            <Col span={6}>
+          <Row gutter={[40, 40]}>
+            <Col span={7}>
               <Card
+                title="Total Page Visits"
                 style={{
+                  height: 300,
                   background:
                     "linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
                 }}
+                extra={<BasicSelect />}
               >
-                <Statistic
-                  title="Total Page Visits"
-                  value={1145}
-                  precision={2}
-                  valueStyle={{ color: "#3f8600" }}
-                />
+                <Statistic value={1145} valueStyle={{ color: "#3f8600" }} />
                 <Line />
                 <SpacedStats />
               </Card>
             </Col>
-            <Col span={18}> large chart</Col>
+            <Col span={17}>
+              <Card bordered={false} style={{ height: 300 }} title="test">
+                <ColumnChart />
+              </Card>
+            </Col>
           </Row>
         </Card>
       </Col>
