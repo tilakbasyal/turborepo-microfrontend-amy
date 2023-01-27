@@ -2,12 +2,6 @@ import React from "react";
 import { Row, Col, Space, Avatar, Badge, Input } from "antd";
 import { BellOutlined, SearchOutlined } from "@ant-design/icons";
 
-const dataSource = [
-  <span>Search</span>,
-  <span>avartar</span>,
-  <Avatar src="https://randomuser.me/api/portraits/women/75.jpg" />,
-];
-
 const Header = () => {
   return (
     <Row justify="end" style={{ padding: "0 24px" }}>

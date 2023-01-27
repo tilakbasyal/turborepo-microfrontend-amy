@@ -65,7 +65,7 @@ const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children, header }) => {
         <Header style={{ padding: 0, background: colorBgContainer }}>
           {header}
         </Header>
-        <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+        <Content style={{ margin: "24px 24px 0", overflow: "initial" }}>
           {children}
         </Content>
         <Footer style={{ textAlign: "center" }}>
