@@ -15,7 +15,7 @@ const WelcomePage = () => {
               <Card
                 title="Total Page Visits"
                 style={{
-                  height: 300,
+                  height: 290,
                   background:
                     "linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
                 }}
@@ -27,7 +27,11 @@ const WelcomePage = () => {
               </Card>
             </Col>
             <Col span={17}>
-              <Card bordered={false} style={{ height: 300 }} title="test">
+              <Card
+                type="inner"
+                title="Active users over the time period"
+                extra={<BasicSelect />}
+              >
                 <ColumnChart />
               </Card>
             </Col>

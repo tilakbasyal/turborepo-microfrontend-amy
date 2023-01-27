@@ -4,6 +4,7 @@ import { Select } from "antd";
 const BasicSelect = () => {
   return (
     <Select
+      size="small"
       defaultValue="week"
       style={{ width: 120 }}
       //   onChange={handleChange}

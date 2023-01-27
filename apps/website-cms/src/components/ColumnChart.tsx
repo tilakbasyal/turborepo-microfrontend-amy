@@ -4,36 +4,36 @@ import { Column, ColumnConfig } from "@ant-design/plots";
 const ColumnChart = () => {
   const data = [
     {
-      action: "sunday",
-      pv: 100,
+      days: "Sunday",
+      Users: 100,
     },
     {
-      action: "Monday",
-      pv: 300,
+      days: "Monday",
+      Users: 300,
     },
     {
-      action: "Tuesday",
-      pv: 71,
+      days: "Tuesday",
+      Users: 71,
     },
     {
-      action: "Wednesday",
-      pv: 15,
+      days: "Wednesday",
+      Users: 15,
     },
     {
-      action: "Thursday",
-      pv: 90,
+      days: "Thursday",
+      Users: 90,
     },
     {
-      action: "Friday",
-      pv: 90,
+      days: "Friday",
+      Users: 90,
     },
   ];
   const config: ColumnConfig = {
     data,
-    height: 300,
+    height: 200,
     // padding: 50,
-    xField: "action",
-    yField: "pv",
+    xField: "days",
+    yField: "Users",
     conversionTag: {},
     xAxis: {
       label: {

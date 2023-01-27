@@ -23,7 +23,7 @@ const Page: React.FC = () => {
     // },
     xAxis: false,
     yAxis: false,
-    height: 120,
+    height: 100,
   };
   return <Line {...config} />;
 };
