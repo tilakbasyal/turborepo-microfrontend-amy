@@ -43,3 +43,15 @@ body {
 .read-the-docs {
   color: #888;
 }
+
+.ant-list-item-meta-title {
+  margin-top: 0;
+}
+
+.ant-list-item-meta-description {
+  margin-right: 24px;
+}
+
+ul.ant-list-item-action {
+  margin-inline-start: 24px !important;
+}

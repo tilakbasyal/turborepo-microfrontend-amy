@@ -4,7 +4,7 @@ import { BellOutlined, SearchOutlined } from "@ant-design/icons";
 
 const Header = () => {
   return (
-    <Row justify="end" style={{ padding: "0 24px" }}>
+    <Row justify="end" style={{ padding: "0 50px" }}>
       <Col flex="100px"></Col>
       <Col
       // flex="auto"

@@ -25,7 +25,7 @@ const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children, header }) => {
   const navigate = useNavigate();
 
   const {
-    token: { colorBgContainer },
+    token: { colorBgContainer, boxShadow },
   } = theme.useToken();
 
   const onClick = handleMenuItemClick(navigate);
@@ -46,7 +46,7 @@ const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children, header }) => {
           style={{
             overflow: "auto",
             height: "100vh",
-            position: "relative",
+            position: "sticky",
             left: 0,
             top: 0,
             bottom: 0,
@@ -69,7 +69,16 @@ const AmyLayout: React.FC<ILayoutProps> = ({ menuItems, children, header }) => {
           />
         </Sider>
         <Layout className="site-layout">
-          <Header style={{ padding: 0, background: colorBgContainer }}>
+          <Header
+            style={{
+              padding: 0,
+              background: colorBgContainer,
+              position: "sticky",
+              top: 0,
+              zIndex: 1,
+              boxShadow,
+            }}
+          >
             {header}
           </Header>
           <Content style={{ margin: "24px 24px 0", overflow: "initial" }}>

@@ -12,8 +12,8 @@ const BasicSelect = () => {
         { value: "week", label: " Week" },
         { value: "month", label: " Month" },
         { value: "quarter", label: " Quarter" },
-        { value: "semiannual", label: " Semi Year" },
-        { value: "year", label: " Year" },
+        { value: "semiannual", label: " Semi Annual" },
+        { value: "year", label: " Annual" },
       ]}
     />
   );

@@ -4,10 +4,12 @@ import Line from "../components/TinyLine";
 import SpacedStats from "../components/SpacedStats";
 import ColumnChart from "../components/ColumnChart";
 import BasicSelect from "../components/BasicSelect";
+import ActionTabs from "../components/Tabs";
+import StatsWithProgressBar from "../components/StatisticWithProgressBar";
 
 const WelcomePage = () => {
   return (
-    <Row gutter={24}>
+    <Row>
       <Col span={24}>
         <Card title="Welcome to Some Company CMS dashboard">
           <Row gutter={[40, 40]}>
@@ -34,6 +36,22 @@ const WelcomePage = () => {
               >
                 <ColumnChart />
               </Card>
+            </Col>
+          </Row>
+
+          <Row gutter={[48, 24]} style={{ paddingTop: 24 }}>
+            <Col span={16}>
+              <ActionTabs />
+            </Col>
+            <Col span={8} style={{ marginTop: 32 }}>
+              <Row gutter={[24, 24]}>
+                <Col span={24}>
+                  <StatsWithProgressBar label="New Visits today / 100" />
+                </Col>
+                <Col span={24}>
+                  <StatsWithProgressBar label="Blogs written / week" />
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Card>
