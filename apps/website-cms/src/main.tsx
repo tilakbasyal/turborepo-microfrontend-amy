@@ -11,6 +11,7 @@ import {
   GalleryPage,
   ContactPage,
 } from "./pages";
+import { Provider, rootStore } from "./models/Root";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider value={rootStore}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

@@ -6,8 +6,11 @@ import ColumnChart from "../components/ColumnChart";
 import BasicSelect from "../components/BasicSelect";
 import ActionTabs from "../components/Tabs";
 import StatsWithProgressBar from "../components/StatisticWithProgressBar";
+// import { useMst } from "../models/Root";
 
 const WelcomePage = () => {
+  // const { navMenus } = useMst();
+  // console.log({ navMenus });
   return (
     <Row>
       <Col span={24}>

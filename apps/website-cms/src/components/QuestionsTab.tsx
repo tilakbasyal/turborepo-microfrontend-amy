@@ -100,20 +100,6 @@ const list = [
     nat: "TR",
     date: todaysDate.toDateString(),
   },
-  {
-    gender: "female",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda suscipit, fugit harum excepturi commodi asperiores distinctio consequuntur consequatur expedita beatae quis iste, alias perferendis fuga cupiditate non culpa amet. Sapiente?",
-    email: "isla.jarvi@example.com",
-    picture: {
-      large: "https://randomuser.me/api/portraits/women/9.jpg",
-      medium: "https://randomuser.me/api/portraits/med/women/9.jpg",
-      thumbnail: "https://randomuser.me/api/portraits/thumb/women/9.jpg",
-    },
-    nat: "FI",
-    date: todaysDate.toDateString(),
-  },
 ];
 
 const QuestionsList: React.FC = () => {
